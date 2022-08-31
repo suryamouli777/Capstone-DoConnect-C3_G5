@@ -1,0 +1,34 @@
+
+<div class="m-3">
+  <table class="table table-bordered">
+    <thead class="table-dark">
+      <tr>
+        <th class="col-1-heading">Question</th>
+        <th>Topic</th>
+        <th>Answer</th>
+        <th>Answered by</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let answer of answers">
+        <td class="col-1">{{ answer.question.question }}</td>
+        <td class="col-2">{{ answer.question.topic }}</td>
+        <td class="col-3">{{ answer.answer }}</td>
+        <td class="col-4">{{ answer.user.firstName}} {{ answer.user.lastName }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+<div id="collapseOne" class="accordion-collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample1">
+  <div class="accordion-body">
+    <form #addAnswer="ngForm" (ngSubmit)="giveAnswer(addAnswer.value)">
+      <div class="mb-3 padding">
+        <textarea ngModel name="answer" class="form-control" id="exampleFormControlTextarea1" rows="3"
+          placeholder="Write your answer" required></textarea>
+      </div>
+      <button type="submit" class="btn submit-button">
+        Submit answer
+      </button>
+    </form>
+  </div>

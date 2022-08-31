@@ -1,0 +1,71 @@
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="">Do Connect</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+      <!--- search content method for testing purpose-->
+      <div class="input-group flex-nowrap w-25 p-1">
+        <input *ngIf="(user.id != 0)" type="search" class="form-control" placeholder="Search" #search
+          (keyup.enter)="getValue(search.value)" aria-label="Search" aria-describedby="addon-wrapping" />
+      </div>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li *ngIf="admin.id != 0 || (user.id!=0)">
+          <button (click)="logout()" ariaCurrentWhenActive="page" class="btn me-2 my-2 nav-buttons" role="button">
+            Logout
+          </button>
+        </li>
+        <li *ngIf="(user.id==0) && (admin.id == 0)">
+          <a routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page"
+            class="btn me-2 my-2 nav-buttons" role="button">
+            User login
+          </a>
+        </li>
+        <li *ngIf="(user.id==0) && (admin.id == 0)">
+          <a routerLink="/register" routerLinkActive="active" ariaCurrentWhenActive="page"
+            class="btn me-2 my-2 nav-buttons" role="button">
+            User signup
+          </a>
+        </li>
+        <li *ngIf=" (admin.id == 0) && (user.id==0)">
+          <a routerLink="/admin-login" routerLinkActive="active" ariaCurrentWhenActive="page"
+            class="btn me-2 my-2 nav-buttons" role="button">
+            Admin login
+          </a>
+        </li>
+        <li *ngIf="(admin.id == 0) && (user.id==0)">
+          <a routerLink="/admin-register" routerLinkActive="active" ariaCurrentWhenActive="page"
+            class="btn me-2 my-2 nav-buttons" role="button">
+            Admin signup
+          </a>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container" *ngIf="isSearched">
+  <table class="table table-bordered">
+    <thead class="table-dark">
+      <tr>
+        <th>Question</th>
+        <th>Get Answer</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let question of questions">
+        <td>{{ question.question }}</td>
+        <td>
+          <button class="btn btn-outline-success" id="{{ question.id }}" (click)="sendQuestionToGetAnswer(question.id)">
+            Get Answers
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

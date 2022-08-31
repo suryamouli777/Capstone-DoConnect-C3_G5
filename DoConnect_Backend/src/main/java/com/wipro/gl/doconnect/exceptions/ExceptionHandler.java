@@ -1,0 +1,21 @@
+package com.wipro.gl.doconnect.exceptions;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ControllerAdvice;
+
+@ControllerAdvice
+public class ExceptionHandler extends RuntimeException
+{
+	private static final long serialVersionUID = 1L;
+
+	@org.springframework.web.bind.annotation.ExceptionHandler(value = NotFound.class)
+	public ResponseEntity<Object> exception(NotFound exception) {
+		return new ResponseEntity<>("Invalid Data ---> Not found", HttpStatus.INTERNAL_SERVER_ERROR);
+	}
+
+	@org.springframework.web.bind.annotation.ExceptionHandler(value = AlreadyExists.class)
+	public ResponseEntity<Object> exception2(AlreadyExists exception) {
+		return new ResponseEntity<>("Already Exists --> Must be unique", HttpStatus.BAD_REQUEST);
+	}
+}

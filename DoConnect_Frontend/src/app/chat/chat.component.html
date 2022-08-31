@@ -1,0 +1,35 @@
+<h3 style="text-align: center">Welcome to Chat {{ user.firstName }}</h3>
+
+<button
+  class="accordion-button collapsed"
+  type="button"
+  data-bs-toggle="collapse"
+  data-bs-target="#collapseOne"
+  aria-expanded="false"
+  aria-controls="collapseOne"
+  (click)="getMessage()"
+>
+  Join the Chat
+</button>
+<div class="container my-2" *ngFor="let message of messages">
+  <div class="bg-white px-2 rounded rounded-xl">
+    <p class="text-xs text-green-600">{{ message.fromUser }}</p>
+    <p class="text-xl text-black">{{ message.message }}</p>
+  </div>
+</div>
+
+<div class="container d-flex flex-row">
+  <input
+    type="text"
+    class="form-control"
+    placeholder="Enter message"
+    #text
+    (keyup.enter)="sendMessage(text.value)"
+    aria-label="text"
+    aria-describedby="addon-wrapping"
+    value={{messageText}}
+  />
+  <button class="btn me-1 btn-outline-primary" (click)="sendMessage(text.value)">
+    Send
+  </button>
+</div>

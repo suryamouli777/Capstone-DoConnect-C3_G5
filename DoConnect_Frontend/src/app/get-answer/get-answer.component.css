@@ -1,0 +1,115 @@
+.sideNav {
+  margin: 10px;
+  /* border: 1px solid #555; */
+  margin-left: 20px;
+}
+
+.questions {
+  max-width: 800px;
+  margin: 30px;
+}
+
+#categories {
+  margin-top: 60px;
+
+}
+
+h2,
+h6 {
+  margin-left: 30px;
+}
+
+li {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#ask {
+  margin-left: 700px;
+}
+
+.questionTag {
+  background: rgb(133, 145, 177);
+  margin-left: 10px;
+  padding: 5px;
+  color: white;
+}
+
+.answer {
+  background: rgb(133, 145, 177);
+  margin-left: 10px;
+  padding: 5px;
+  color: white;
+  float: right;
+}
+
+.yourAnswer {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.submit-button {
+  margin: 0 20px;
+  background-color: black;
+  font-size: large;
+  color: #ebe5d6;
+  padding: 12px 30px;
+  border-radius: 15px;
+  border: none;
+  box-shadow: 3px 3px #fbe7d7;
+  text-align: center;
+}
+
+.submit-button :hover {
+  background-color: gray;
+}
+
+.main-body {
+  min-height: 750px;
+}
+
+
+.questions p {
+  flex: auto;
+}
+
+
+
+
+
+
+
+.container-answer {
+  width: 80%;
+  text-align: center;
+  margin: auto;
+}
+
+th {
+  font-weight: 700;
+}
+
+th,
+td {
+  /* width:24%; */
+  border: 1px solid black;
+  padding: 5px 30px;
+  font-size: 16px;
+}
+
+.col-1-heading {
+  width: 50%;
+}
+
+tr .col-1 {
+  text-align: justify;
+  width: 50%;
+}
+
+tr .col-1 {
+  text-align: center;
+}
+
+tr .col-1 {
+  text-align: justify;
+}

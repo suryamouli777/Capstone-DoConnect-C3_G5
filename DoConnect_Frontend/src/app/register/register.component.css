@@ -1,0 +1,63 @@
+.body{
+    background-color: whitesmoke;
+    background:url('../../assets/images/login1.jpg');
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+   height: 500px;
+}
+
+.register {
+    width:350px;
+    top:40%;left:50%;
+    transform: translate(-50%,-50%);
+    position:absolute;
+    color:#fff;
+    margin-top: 50px;
+}
+
+h2 {
+    text-align: center;
+    font-weight: bold;
+    color:black;
+    margin-bottom: 30px;
+}
+.row g-3 input{
+    font-size: 16px;
+    width:100%;
+    padding:15px 10px;
+    border:0;
+    outline:none;
+    border: radius 5px;
+
+}
+.register-button{
+    margin: 0 20px;
+    font-size: large;
+    color: white;
+    padding: 6px 20px;
+    border-radius: 15px;
+    border:none;
+    background-color: black;
+}
+
+p{
+    color: black ;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.registerButton{
+    text-align: center;
+}
+
+p {
+    text-align: center;
+    margin: 15px 0 10px 0;
+    text-decoration: none;
+}
+
+a{
+    text-decoration: none;
+}

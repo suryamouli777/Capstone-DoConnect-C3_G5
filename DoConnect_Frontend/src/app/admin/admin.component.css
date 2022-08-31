@@ -1,0 +1,53 @@
+.body{
+    background-color: whitesmoke;
+    background: url();
+    background-size: cover;
+    font-family: 'Raleway', sans-serif;
+    height: max-content;
+}
+
+.admin-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.admin-name {
+    color: blue;
+    font-weight: bold;
+    
+}
+
+.admin-button{
+    margin: 0 20px;
+    background-color: #14a7e6;
+    font-size: large;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 15px;
+    border:none;
+}
+
+.admin-button:hover {
+    background-color: purple;
+}
+
+.holder{
+	background-color: #ebe5d6;
+	height: 90%;
+    font-family: 'Raleway', sans-serif;
+    color: black;
+}
+
+.div page-heading {
+    font-size: 45px;
+    text-align: center;
+    width:30%;
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+}
+
+.logout-button{
+    
+    color: white;
+}

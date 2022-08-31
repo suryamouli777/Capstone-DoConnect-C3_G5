@@ -1,0 +1,72 @@
+.holder {
+  background-color: whitesmoke;
+  margin-top: 50px;
+  font-family: 'Raleway', sans-serif;
+  background: url();
+  background-size: cover;
+}
+
+.chat-button {
+  border-radius: 50%;
+  color: aliceblue;
+  position: static;
+  width: 60px;
+  height: 60px;
+  right: -20px;
+  color: #FFF;
+  border-radius: 50px;
+  text-align: center;
+  box-shadow: 2px 2px 3px #999;
+  float: left;
+
+}
+
+.chat-button {
+  margin-right: 40px;
+}
+
+.logout-button {
+  margin: 0 20px;
+  background-color: black;
+  font-size: large;
+  color: #ebe5d6;
+  padding: 12px 30px;
+  border-radius: 15px;
+  border: none;
+}
+
+.logout-button :hover {
+  background-color: #0005;
+}
+
+.q-button {
+  background-color: black;
+  font-size: large;
+  color: #ebe5d6;
+  border: none;
+}
+
+.q-button :hover {
+  background-color: #0005;
+}
+
+.sub-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+}
+
+.page-heading {
+  font-size: 45px;
+  text-align: center;
+  width: 30%;
+  font-weight: 700;
+  font-family: 'Playfair Display', serif;
+}
+
+.chat {
+  width: 20%;
+}

@@ -1,0 +1,39 @@
+<div class="body">
+  <h1>Type your Question...</h1>
+  <div class="askQuestion">
+    <form #askquestion="ngForm" (ngSubmit)="askQuestion(askquestion.value)">
+
+      <h3 style="color: black;">Choose Topic</h3>
+
+      <select ngModel name="topic" class="form-select" aria-label="Default select example" required>
+        <option selected disabled>Choose Topic</option>
+        <option value="DBMS">DBMS</option>
+        <option value="Python">Python</option>
+        <option value="C++">C++</option>
+        <option value="JAVA">JAVA</option>
+        <option value="Others">Others</option>
+      </select>
+
+      <br>
+      <div>
+        <label for="exampleFormControlTextarea1" class="form-label">Enter your question.</label>
+        <textarea ngModel name="question" class="form-control" id="exampleFormControlTextarea1" rows="3"
+          required></textarea>
+      </div>
+      <br>
+      <div class="askQuestionButton">
+        <button type="submit" class="btn ask-button">Submit</button>
+      </div>
+    </form>
+    <br>
+
+    <div class="container row">
+      <div class="col-md-6">
+        <input type="file" (change)="onFileChanged($event)" />
+      </div>
+      <div class="col-md-6">
+        <button class="btn ask-button" type="button" (click)="onUpload()">
+          Upload
+        </button>
+      </div>
+    </div>

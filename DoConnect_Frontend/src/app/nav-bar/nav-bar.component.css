@@ -1,0 +1,20 @@
+.navbar-brand{
+    font-weight: bold;
+}
+.navbar{
+    background-color: black;
+    position: relative;
+    top:0
+
+}
+.nav-buttons{
+    padding-left:20px;
+    padding-right: 20px;
+    border-radius: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 16px;
+    background-color: black;
+    color: azure;
+    font-weight: 500;
+}

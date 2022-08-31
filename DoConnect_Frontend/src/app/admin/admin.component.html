@@ -1,0 +1,173 @@
+<div class="body">
+  <div class="page-heading text-center" style="font-weight: bold;"><span>
+      <h1>
+        Admin Dashboard
+      </h1>
+      <h3>
+        Welcome, <span class="admin-name text-uppercase">{{ admin.firstName }} {{admin.lastName}}</span>
+      </h3>
+    </span>
+  </div>
+  <div class="admin-menu">
+    <div class="">
+      <button class="btn my-2 admin-button" (click)="addAdmin()" type="button">
+        Add Admin
+      </button>
+      <button (click)="getUnApprovedQuestions()" class="btn my-2 admin-button" type="button">
+        Get UnApproved Questions
+      </button>
+      <button (click)="getUnApprovedAnswers()" class="btn my-2 admin-button" type="button" data-bs-toggle="collapse"
+        data-bs-target="#answerTable" aria-expanded="false" aria-controls="answerTable">
+        Get UnApproved Answers
+      </button>
+      <button (click)="getAllUsers()" class="btn my-2 admin-button" type="button">
+        Get All Users
+      </button>
+      <button (click)="getAllQuestions()" class="btn my-2 admin-button" type="button">
+        Get All Questions
+      </button>
+      <button (click)="getAllAnswers()" class="btn my-2 admin-button" type="button">
+        Get All Answers
+      </button>
+    </div>
+    <div class="">
+      <div *ngIf="questionActive"   id="questionTable">
+        <table class="table table-bordered">
+          <thead class="table-dark">
+            <tr>
+              <th>Id</th>
+              <th>Question</th>
+              <th>Posted By</th>
+              <th>Topic</th>
+              <th>Approve</th>
+              <th>Reject</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let question of questions">
+              <td>{{ question.id }}</td>
+              <td>{{ question.question }}</td>
+              <td>{{ question.user.firstName }} </td>
+              <td>{{ question.topic }}</td>
+              <td>
+                <button class="btn btn-outline-success" id="{{ question }}" (click)="approveQuestion(question.id)">
+                  Approve
+                </button>
+              </td>
+              <td>
+                <button class="btn btn-outline-danger" id="{{ question }}" (click)="deleteQuestion(question.id)">
+                  Remove
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+
+
+
+      <div *ngIf="answerActive" id="answerTable">
+        <table class="table table-bordered">
+          <thead class="table-dark">
+            <tr>
+              <th>Id</th>
+              <th>Question</th>
+              <th>Answer</th>
+              <th>Answer Given by</th>
+              <th>Approve</th>
+              <th>Reject</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let answer of answers">
+              <td>{{ answer.id }}</td>
+              <td>{{ answer.question.question }}</td>
+              <td>{{ answer.answer }}</td>
+              <td>{{ answer.user.firstName }} {{answer.user.lastName }}</td>
+
+              <td>
+                <button class="btn btn-outline-success" id="{{ answer.id }}" (click)="approveAnswer(answer.id)">
+                  Approve
+                </button>
+              </td>
+              <td>
+                <button class="btn btn-outline-danger" id="{{ answer.id }}" (click)="deleteAnswer(answer.id)">
+                  Remove
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+
+
+      <div *ngIf="userActive" id="userTable">
+        <table class="table table-bordered">
+          <thead class="table-dark">
+            <tr>
+              <th>Id</th>
+              <th>UserName</th>
+              <th>User Email</th>
+              <th>PhoneNumber</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of users">
+              <td>{{ user.id }}</td>
+              <td>{{ user.firstName }} {{ user.lastName }}</td>
+              <td>{{ user.email }}</td>
+              <td>{{ user.phoneNumber }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div *ngIf="questionsActive" id="questionsTable">
+        <table class="table table-bordered">
+          <thead class="table-dark">
+            <tr>
+              <th>Id</th>
+              <th>Question</th>
+              <th>Posted by</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let question of questions">
+              <td>{{ question.id }}</td>
+              <td>{{ question.question }}</td>
+              <td>{{ question.user.firstName }} {{ question.user.lastName }}</td>
+              <td>{{ question.isApproved?"Approved":"Not Approved"}}</td>
+              
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div *ngIf="answersActive" id="answersTable">
+        <table class="table table-bordered">
+          <thead class="table-dark">
+            <tr>
+              <th>Id</th>
+              <th>Answer</th>
+              <th>Posted by</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let answer of answers">
+              <td>{{ answer.id }}</td>
+              <td>{{ answer.question.question }}</td>
+              <td>{{ answer.user.firstName }} {{ answer.user.lastName }}</td>
+              <td>{{ answer.isApproved?"Approved":"Not Approved"}}</td>
+              
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</div>

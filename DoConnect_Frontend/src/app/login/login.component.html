@@ -1,0 +1,20 @@
+<div class="body">
+  <div class="login">
+    <form ngNativeValidate #userlogin="ngForm" (ngSubmit)="userLogin(userlogin.value)">
+      
+        <label class="container"> <h2>User Login</h2> </label><br>
+        <label class="form-label">Email </label>
+        <input ngModel name="email" type="email" class="form-control" placeholder="xyz@gmail.com" aria-describedby="emailHelp" required />
+        <br/>
+        <label class="form-label">Password</label>
+        <input ngModel name="password" type="password" class="form-control" placeholder="password" required />
+      
+        <button type="submit" class="btn login-button me-2">
+              Login
+        </button>
+    </form>
+    <a routerLink="/register" routerLinkActive="active" ariaCurrentWhenActive="page">
+      <p>New User? Register here</p>
+    </a>
+  </div>    
+</div>
